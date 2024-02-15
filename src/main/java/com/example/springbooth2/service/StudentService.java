@@ -38,4 +38,8 @@ public class StudentService {
     public long countStudentsByAgeGreaterThan(Integer age) {
         return studentRepository.countByAgeGreaterThan(age);
     }
+
+    public Student getStudentById(Integer id) {
+        return studentRepository.findById(id).orElse(null);
+    }
 }

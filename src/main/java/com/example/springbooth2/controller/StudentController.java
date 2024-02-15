@@ -61,4 +61,21 @@ public class StudentController {
     private long countStudentsByAgeGreaterThan(@PathVariable Integer age) {
         return studentService.countStudentsByAgeGreaterThan(age);
     }
+
+    @PutMapping("/updateAge/{id}/{age}")
+
+    private ResponseEntity<String> updateStudentAge( @PathVariable Integer id, @PathVariable Integer age) {
+        try {
+            Student student = studentService.getStudentById(id);
+            if (student != null) {
+                student.setAge(age);
+                studentService.saveOrUpdate(student);
+                return new ResponseEntity<>("Student with ID " + id + " age updated successfully", HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>("Student with ID " + id + " not found", HttpStatus.NOT_FOUND);
+            }
+        } catch (Exception exception) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
