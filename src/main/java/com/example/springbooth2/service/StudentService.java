@@ -20,9 +20,9 @@ public class StudentService {
         studentRepository.save(student);
     }
 
-//    public List<Student> getStudentsByAgeGreaterThan(Integer age) {
-//        return studentRepository.findByAgeGreaterThan(age);
-//    }
+    public List<Student> getStudentsByAgeGreaterThan(Integer age) {
+        return studentRepository.findByAgeGreaterThan(age);
+    }
 
     public List<Student> getStudentsByNameContaining(String name) {
         return studentRepository.findByNameContaining(name);

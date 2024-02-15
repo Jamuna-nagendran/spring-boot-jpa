@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer > {
-//    List<Student> findByAgeGreaterThan(Integer age);
+   List<Student> findByAgeGreaterThan(Integer age);
     List<Student> findByNameContaining(String name);
     void deleteByName(String name);
     long countByAgeGreaterThan(Integer age);

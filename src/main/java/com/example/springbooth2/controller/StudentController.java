@@ -38,10 +38,10 @@ public class StudentController {
 
 
 
-//    @GetMapping("/ageGreaterThan/{age}")
-//    private List<Student> getStudentsByAgeGreaterThan(@PathVariable Integer age) {
-//        return studentService.getStudentsByAgeGreaterThan(age);
-//    }
+    @GetMapping("/ageGreaterThan/{age}")
+    private List<Student> getStudentsByAgeGreaterThan(@PathVariable Integer age) {
+        return studentService.getStudentsByAgeGreaterThan(age);
+    }
 
 
     @GetMapping("/nameContaining/{name}")
